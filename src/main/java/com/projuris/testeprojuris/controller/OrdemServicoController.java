@@ -2,7 +2,7 @@ package com.projuris.testeprojuris.controller;
 
 import com.projuris.testeprojuris.Response;
 import com.projuris.testeprojuris.model.OrdemServico;
-import com.projuris.testeprojuris.model.OrdemServicoDTO;
+import com.projuris.testeprojuris.dto.OrdemServicoDTO;
 import com.projuris.testeprojuris.service.OrdemServicoService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
