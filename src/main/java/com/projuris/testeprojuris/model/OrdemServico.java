@@ -21,4 +21,7 @@ public class OrdemServico {
 
     @OneToOne
     private Cliente cliente;
+
+    @OneToOne
+    private Responsavel responsavel;
 }

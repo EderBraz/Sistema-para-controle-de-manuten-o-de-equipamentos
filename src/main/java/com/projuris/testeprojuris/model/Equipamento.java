@@ -1,5 +1,6 @@
 package com.projuris.testeprojuris.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ public class Equipamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
     private String tipo;
     private String marca;

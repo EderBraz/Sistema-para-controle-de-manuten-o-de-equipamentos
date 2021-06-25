@@ -1,5 +1,6 @@
 package com.projuris.testeprojuris.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
     @NotEmpty(message = "Informe o nome do cliente")
     private String nome;
@@ -25,6 +27,6 @@ public class Cliente {
     @NotBlank
     @Email
     private String email;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Equipamento equipamento;
 }
