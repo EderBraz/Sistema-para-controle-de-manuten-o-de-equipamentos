@@ -8,8 +8,9 @@ import java.util.List;
 
 public interface OrdemServicoRepository extends JpaRepository<OrdemServico, Long> {
 
-    @Query(value = "SELECT a FROM OrdemServico a WHERE a.status=PENDENTE AND a.responsavel.nome = :nome")
-
+    @Query(value = "SELECT o FROM OrdemServico o WHERE o.status='PENDENTE' AND o.responsavel.nome = :nome")
     List<OrdemServico> buscarOrdemPendentePorResponsavel(String nome);
+
+
 }
 
