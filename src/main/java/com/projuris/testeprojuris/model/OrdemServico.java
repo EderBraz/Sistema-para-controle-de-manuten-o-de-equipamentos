@@ -1,5 +1,6 @@
 package com.projuris.testeprojuris.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ public class OrdemServico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
     private LocalDate inicioAtendimento;
     private LocalDate fimAtendimento;
@@ -19,9 +21,9 @@ public class OrdemServico {
     @Enumerated(EnumType.STRING)
     private StatusReparo status;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Cliente cliente;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Responsavel responsavel;
 }

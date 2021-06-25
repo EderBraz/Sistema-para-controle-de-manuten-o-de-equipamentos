@@ -8,10 +8,13 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Data
 @Entity
-public class Cliente {
+public class Cliente implements Serializable {
+
+    private static final long serialVersionUID = 7609744645248880701L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

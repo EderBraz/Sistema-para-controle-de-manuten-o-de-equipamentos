@@ -7,10 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Data
 @Entity
-public class Responsavel {
+public class Responsavel implements Serializable {
+
+    private static final long serialVersionUID = -7074635388043898329L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
