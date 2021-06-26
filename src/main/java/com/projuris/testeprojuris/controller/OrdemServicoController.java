@@ -1,8 +1,8 @@
 package com.projuris.testeprojuris.controller;
 
 import com.projuris.testeprojuris.Response;
-import com.projuris.testeprojuris.model.OrdemServico;
 import com.projuris.testeprojuris.dto.OrdemServicoDTO;
+import com.projuris.testeprojuris.model.OrdemServico;
 import com.projuris.testeprojuris.service.OrdemServicoService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +25,12 @@ public class OrdemServicoController {
     /**
      * Busca todas as ordens de serviço.
      *
-     * @return List lista de OrdemServico
+     * @return ResponseEntity com uma List<OrdemServico> e HTTP status 200.
      */
     @GetMapping
     @ApiOperation(value = "Lista todas ordens de serviço.")
-    public List<OrdemServico> findAll(){
-        return service.findAll();
+    public ResponseEntity<List<OrdemServico>> findAll(){
+        return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
 
     /**
